@@ -1,3 +1,4 @@
 import userResolver from "./userResolver";
 import roomResolver from "./roomResolver";
-export default [userResolver, roomResolver];
+import messageResolver from "./messageResolver";
+export default [userResolver, roomResolver, messageResolver];
