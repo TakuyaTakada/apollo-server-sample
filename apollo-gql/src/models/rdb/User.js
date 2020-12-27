@@ -1,5 +1,5 @@
 import { Model, DataTypes } from "sequelize";
-import { sequelize } from "../../loaders/rdbLoader";
+import { rdbLoader } from "../../loaders/rdbLoader";
 import Room from "./Room";
 
 export default class User extends Model {}
@@ -18,7 +18,7 @@ User.init(
       allowNull: false,
     },
   },
-  { sequelize, modelName: "user" }
+  { sequelize: rdbLoader, modelName: "user" }
 );
 
 User.Rooms = User.hasMany(Room);

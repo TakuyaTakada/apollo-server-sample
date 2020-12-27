@@ -1,5 +1,5 @@
 import { Model, DataTypes } from "sequelize";
-import { sequelize } from "../../loaders/rdbLoader";
+import { rdbLoader } from "../../loaders/rdbLoader";
 
 export default class Room extends Model {}
 
@@ -17,5 +17,5 @@ Room.init(
       allowNull: false,
     },
   },
-  { sequelize, modelName: "room" }
+  { sequelize: rdbLoader, modelName: "room" }
 );
