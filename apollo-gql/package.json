@@ -1,0 +1,26 @@
+{
+  "name": "apollo-gql",
+  "version": "0.1.0",
+  "description": "Apollo server",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node src/index.js",
+    "build": "babel src -d dist --copy-files"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "eslint": "^7.16.0",
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "apollo-server": "^2.19.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5"
+  }
+}

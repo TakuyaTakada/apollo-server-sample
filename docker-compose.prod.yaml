@@ -1,0 +1,15 @@
+version: '3.3'
+
+volumes:
+    mysql-volume:
+    mongo-volume:
+
+services:
+    apollo-gql:
+        image: taktakty/apollo-gql:prod
+        build:
+            context: apollo-gql
+            target: production
+        container_name: apollo-gql
+        ports:
+            - 4000:4000
