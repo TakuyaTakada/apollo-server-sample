@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package user;
+
+import "google/protobuf/empty.proto";
+
+service UserController {
+    rpc List(UserListRequest) returns (stream User) {}
+    rpc Create(User) returns (User) {}
+    rpc Retrieve(UserRetrieveRequest) returns (User) {}
+    rpc Update(User) returns (User) {}
+    rpc Destroy(User) returns (google.protobuf.Empty) {}
+}
+
+message User {
+    string id = 1;
+    string name = 2;
+}
+
+message UserListRequest {
+}
+
+message UserRetrieveRequest {
+    string id = 1;
+}
