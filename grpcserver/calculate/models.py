@@ -11,8 +11,8 @@ from django.db import models
 class Room(models.Model):
     id = models.CharField(primary_key=True, max_length=36)
     name = models.CharField(max_length=255)
-    created_at = models.DateTimeField(db_column='createdAt')  # Field name made lowercase.
-    updated_at = models.DateTimeField(db_column='updatedAt')  # Field name made lowercase.
+    created_at = models.DateTimeField(auto_now_add=True, db_column='createdAt')  # Field name made lowercase.
+    updated_at = models.DateTimeField(auto_now=True, db_column='updatedAt')  # Field name made lowercase.
     user = models.ForeignKey('User', models.DO_NOTHING, db_column='userId', blank=True, null=True, related_name="rooms")  # Field name made lowercase.
 
     class Meta:
