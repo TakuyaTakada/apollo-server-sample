@@ -18,6 +18,8 @@ services:
       - mysql
     volumes:
       - ./apollo-gql/src:/app/src
+    env_file:
+      - .env
 
   grpcserver:
     image: taktakty/grpcserver:latest
