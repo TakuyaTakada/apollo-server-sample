@@ -1,0 +1,14 @@
+type Room {
+  id: ID!
+  name: String!
+  members: [User]
+}
+extend type Query {
+  rooms: [Room!]!
+}
+extend type Mutation {
+  createRoom(input: createRoomInput!): Room!
+}
+input createRoomInput {
+  name: String!
+}

@@ -1,0 +1,22 @@
+type User {
+  id: ID!
+  name: String!
+  rooms: [Room]!
+}
+
+type Token {
+  accessToken: String!
+}
+
+type Query {
+  user(id: ID!): User
+  users: [User!]!
+}
+input passwordAuthInput {
+  email: ID!
+  password: String!
+}
+type Mutation {
+  signUp(input: passwordAuthInput!): Boolean!
+  signIn(input: passwordAuthInput!): Token!
+}

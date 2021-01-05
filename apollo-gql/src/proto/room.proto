@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package room;
+
+import "google/protobuf/empty.proto";
+
+service RoomController {
+    rpc List(RoomListRequest) returns (stream Room) {}
+    rpc Create(Room) returns (Room) {}
+    rpc Retrieve(RoomRetrieveRequest) returns (Room) {}
+    rpc Update(Room) returns (Room) {}
+    rpc Destroy(Room) returns (google.protobuf.Empty) {}
+}
+
+message Room {
+    string id = 1;
+    string name = 2;
+    string user = 3;
+}
+
+message RoomListRequest {
+}
+
+message RoomRetrieveRequest {
+    string id = 1;
+}
