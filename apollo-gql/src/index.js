@@ -12,6 +12,8 @@ import { rdbModels as rdb } from "./models/rdb";
 import { mongoModels as mongo } from "./models/mongo";
 import { cognito } from "./config/auth";
 
+console.log("test")
+
 const server = new ApolloServer({
   typeDefs,
   resolvers,
