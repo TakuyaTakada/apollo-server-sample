@@ -3,8 +3,13 @@ import typeDefs from "./schema/types";
 import resolvers from "./schema/resolvers";
 import { rdb } from "./loaders/rdb";
 import { mongo } from "./loaders/mongo";
+import { createDatasource } from "./datasources";
 
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer({
+  typeDefs,
+  resolvers: resolvers as any,
+  dataSources: createDatasource,
+});
 
 const mongodb = mongo.connection;
 
