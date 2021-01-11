@@ -38,6 +38,7 @@
     "apollo-server": "^2.19.1",
     "graphql": "^15.4.0",
     "graphql-import-node": "0.0.4",
+    "mongoose": "^5.11.11",
     "mysql2": "^2.2.5",
     "sequelize": "^6.3.5"
   }

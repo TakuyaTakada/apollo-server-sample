@@ -39,6 +39,8 @@ services:
     container_name: mongo
     volumes:
       - mongo-volume:/data/db
+    ports:
+      - "27017:27017"
 
   mysql:
     image: mysql:5.7.32

@@ -14,7 +14,7 @@ const server = new ApolloServer({
   // typeDefs,
   // resolvers,
   // context: async ({ req, connection }) => {
-  //   return { rdb, mongo, cognito };
+  //   return { rdb, mongo.ts, cognito };
   // },
   schema,
 });
