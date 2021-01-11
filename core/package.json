@@ -17,7 +17,7 @@
   },
   "scripts": {
     "build": "npx tsc && copyfiles -u 1 'src/**/*.{graphql,proto}' 'dist/'",
-    "build:live": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "build:live": "nodemon --watch 'src/**/*.{ts,graphql,proto}' --exec 'ts-node' src/index.ts",
     "start": "npm run build:live",
     "prettier:base": "prettier --parser typescript --single-quote",
     "prettier:check": "npm run prettier:base -- --check \"src/**/*.{ts,tsx}\"",

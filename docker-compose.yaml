@@ -5,19 +5,19 @@ volumes:
   mongo-volume:
 
 services:
-  apollo-gql:
-    image: taktakty/apollo-gql:latest
+  core:
+    image: taktakty/core:latest
     build:
-      context: apollo-gql
+      context: core
       target: development
-    container_name: apollo-gql
+    container_name: core
     ports:
       - "4000:4000"
     depends_on:
       - mongo
       - mysql
     volumes:
-      - ./apollo-gql/src:/app/src
+      - ./core/src:/app/src
     env_file:
       - .env
 
