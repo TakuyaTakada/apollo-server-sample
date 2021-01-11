@@ -45,8 +45,8 @@ services:
     container_name: mysql
     environment:
       - MYSQL_ROOT_PASSWORD=dev1234
-      - MYSQL_DATABASE=dev
-      - MYSQL_USER=dev
+      - MYSQL_DATABASE=development
+      - MYSQL_USER=developer
       - MYSQL_PASSWORD=dev1234
     volumes:
       - mysql-volume:/var/lib/mysql
