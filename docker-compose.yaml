@@ -5,19 +5,19 @@ volumes:
   mongo-volume:
 
 services:
-  apollo-gql:
-    image: taktakty/apollo-gql:latest
+  core:
+    image: taktakty/core:latest
     build:
-      context: apollo-gql
+      context: core
       target: development
-    container_name: apollo-gql
+    container_name: core
     ports:
       - "4000:4000"
     depends_on:
       - mongo
       - mysql
     volumes:
-      - ./apollo-gql/src:/app/src
+      - ./core/src:/app/src
     env_file:
       - .env
 
@@ -39,14 +39,16 @@ services:
     container_name: mongo
     volumes:
       - mongo-volume:/data/db
+    ports:
+      - "27017:27017"
 
   mysql:
     image: mysql:5.7.32
     container_name: mysql
     environment:
       - MYSQL_ROOT_PASSWORD=dev1234
-      - MYSQL_DATABASE=dev
-      - MYSQL_USER=dev
+      - MYSQL_DATABASE=development
+      - MYSQL_USER=developer
       - MYSQL_PASSWORD=dev1234
     volumes:
       - mysql-volume:/var/lib/mysql
