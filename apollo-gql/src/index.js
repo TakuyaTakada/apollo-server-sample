@@ -1,9 +1,5 @@
+import "reflect-metadata";
 import { ApolloServer } from "apollo-server";
-import {
-  CognitoUserPool,
-  CognitoUserAttribute,
-  CognitoUser,
-} from "amazon-cognito-identity-js";
 import typeDefs from "./schema/types/index";
 import resolvers from "./schema/resolvers/index";
 import { rdbLoader } from "./loaders/rdbLoader";
@@ -11,13 +7,16 @@ import { mongoLoader } from "./loaders/mongoLoader";
 import { rdbModels as rdb } from "./models/rdb";
 import { mongoModels as mongo } from "./models/mongo";
 import { cognito } from "./config/auth";
+import schema from "./modules/app.module";
+console.log(schema);
 
 const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-  context: async ({ req, connection }) => {
-    return { rdb, mongo, cognito };
-  },
+  // typeDefs,
+  // resolvers,
+  // context: async ({ req, connection }) => {
+  //   return { rdb, mongo, cognito };
+  // },
+  schema,
 });
 
 const mongodb = mongoLoader.connection;

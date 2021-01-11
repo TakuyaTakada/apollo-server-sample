@@ -10,5 +10,13 @@
     ]
   ],
   "sourceMaps": "inline",
-  "retainLines": true
+  "retainLines": true,
+  "plugins": [
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ]
+  ]
 }
